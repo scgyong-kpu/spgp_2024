@@ -17,11 +17,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btn = (Button)findViewById(R.id.pushMeButton);
         btn.setOnClickListener(this);
+
+        Button btn2 = (Button)findViewById(R.id.anotherButton);
+        btn2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Log.d("Tag", "msg");
         TextView tv = findViewById(R.id.nameTextView);
-        tv.setText("Button pushed");    }
+        if (view.getId() == R.id.pushMeButton) {
+            tv.setText("Push Me");
+        } else if (view.getId() == R.id.anotherButton) {
+            tv.setText("Another");
+        }
+    }
 }
