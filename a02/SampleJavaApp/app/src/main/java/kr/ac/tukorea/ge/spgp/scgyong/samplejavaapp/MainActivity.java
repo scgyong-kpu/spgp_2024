@@ -8,31 +8,30 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button btn = findViewById(R.id.pushMeButton);
-        // #1
-        btn.setOnClickListener(this);
+        // #2
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = findViewById(R.id.nameTextView);
+                tv.setText("PushMe");
+            }
+        });
 
         Button btn2 = findViewById(R.id.anotherButton);
-        btn2.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.pushMeButton) {
-            TextView tv = findViewById(R.id.nameTextView);
-            tv.setText("PushMe");
-        } else if (id == R.id.anotherButton) {
-            TextView tv = findViewById(R.id.nameTextView);
-            tv.setText("Another");
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = findViewById(R.id.nameTextView);
+                tv.setText("Another");
+            }
+        });
     }
 }
