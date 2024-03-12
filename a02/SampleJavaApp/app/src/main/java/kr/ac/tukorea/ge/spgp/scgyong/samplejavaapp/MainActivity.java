@@ -14,25 +14,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // #3
-        Button btn = findViewById(R.id.pushMeButton);
-        btn.setOnClickListener(pushMeOnClickListener);
-        Button btn2 = findViewById(R.id.anotherButton);
-        btn2.setOnClickListener(anotherOnClickListener);
     }
-    private View.OnClickListener pushMeOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            TextView tv = findViewById(R.id.nameTextView);
-            tv.setText("PushMe");
-        }
-    };
-    private View.OnClickListener anotherOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            TextView tv = findViewById(R.id.nameTextView);
-            tv.setText("Another");
-        }
-    };
+
+    // #4. onClick XML attr 이용
+    public void onBtnPushMe(View sender) {
+        TextView tv = findViewById(R.id.nameTextView);
+        tv.setText("PushMe");
+    }
+
+    public void onBtnAnother(View view) {
+        TextView tv = findViewById(R.id.nameTextView);
+        tv.setText("Another");
+    }
 }

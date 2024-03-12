@@ -22,12 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Push Me"
+        android:onClick="onBtnPushMe"
         />
     <Button
         android:id="@+id/anotherButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Another"
+        android:onClick="onBtnAnother"
         />
 
 
