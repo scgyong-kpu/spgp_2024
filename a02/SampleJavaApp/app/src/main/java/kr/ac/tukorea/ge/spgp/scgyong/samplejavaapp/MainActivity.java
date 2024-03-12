@@ -15,19 +15,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        String id = idInput.text;
-//        String id = idInput.getText();
-//        //tv.text = "Loaded";
-        TextView tv = findViewById(R.id.nameTextView);
-        tv.setText("Loaded");
 
         Button btn = findViewById(R.id.pushMeButton);
         // #1
         btn.setOnClickListener(this);
+
+        Button btn2 = findViewById(R.id.anotherButton);
+        btn2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Log.d("Tag", "button clicked");
+        int id = view.getId();
+        if (id == R.id.pushMeButton) {
+            TextView tv = findViewById(R.id.nameTextView);
+            tv.setText("PushMe");
+        } else if (id == R.id.anotherButton) {
+            TextView tv = findViewById(R.id.nameTextView);
+            tv.setText("Another");
+        }
     }
 }
