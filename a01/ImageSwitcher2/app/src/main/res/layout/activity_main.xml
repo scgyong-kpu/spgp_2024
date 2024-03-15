@@ -12,22 +12,28 @@
         android:layout_height="wrap_content"
         >
         <Button
+            android:id="@+id/prevButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Previous"
+            android:onClick="onBtnPrevious"
             />
         <TextView
+            android:id="@+id/pageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 / 6"
             />
         <Button
+            android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
+            android:onClick="onBtnNext"
             />
     </LinearLayout>
     <ImageView
+        android:id="@+id/mainImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/cat_5"
