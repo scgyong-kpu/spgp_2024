@@ -6,6 +6,9 @@ android {
     namespace = "kr.ac.tukorea.ge.spgp.scgyong.imageswitcher"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "kr.ac.tukorea.ge.spgp.scgyong.imageswitcher"
         minSdk = 24
