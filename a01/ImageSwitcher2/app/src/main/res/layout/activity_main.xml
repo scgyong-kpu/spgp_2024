@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <Button
+        <ImageButton
             android:id="@+id/prevButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Previous"
+            android:src="@mipmap/prev"
+            android:background="@null"
             android:onClick="onBtnPrevious"
             />
         <TextView
@@ -25,11 +26,11 @@
             android:layout_height="wrap_content"
             android:text="1 / 6"
             />
-        <Button
+        <ImageButton
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
+            android:background="@mipmap/next"
             android:onClick="onBtnNext"
             />
     </LinearLayout>
