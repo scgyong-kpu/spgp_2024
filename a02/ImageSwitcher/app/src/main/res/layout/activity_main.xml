@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <Button
+        <ImageButton
             android:id="@+id/prevButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Previous"
+            android:background="@mipmap/prev"
+            android:layout_width="@dimen/page_btn_size"
+            android:layout_height="@dimen/page_btn_size"
             android:onClick="onBtnPrev"
             />
         <TextView
@@ -27,11 +27,11 @@
             android:textSize="20sp"
             android:layout_weight="1"
             />
-        <Button
+        <ImageButton
             android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
+            android:background="@mipmap/next"
+            android:layout_width="@dimen/page_btn_size"
+            android:layout_height="@dimen/page_btn_size"
             android:onClick="onBtnNext"
             />
 
