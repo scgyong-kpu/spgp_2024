@@ -8,12 +8,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import kr.ac.tukorea.ge.spgp.scgyong.imageswitcher.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView mainImageView;
-    private TextView pageTextView;
-    private Button prevButton;
-    private Button nextButton;
+
 
     int page;
 
@@ -21,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
             R.mipmap.cat_1, R.mipmap.cat_2, R.mipmap.cat_3,
             R.mipmap.cat_4, R.mipmap.cat_5, R.mipmap.cat_6,
     };
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mainImageView = findViewById(R.id.mainImageView);
-        pageTextView = findViewById(R.id.pageTextView);
-        prevButton = findViewById(R.id.prevButton);
-        nextButton = findViewById(R.id.nextButton);
+        //setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         setPage(1);
     }
@@ -38,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         this.page = page;
-        mainImageView.setImageResource(resIds[page - 1]);
-        pageTextView.setText(page + " / " + resIds.length);
+        binding.mainImageView.setImageResource(resIds[page - 1]);
+        binding.pageTextView.setText(page + " / " + resIds.length);
 
-        prevButton.setEnabled(page > 1);
-        nextButton.setEnabled(page < resIds.length);
+        binding.prevButton.setEnabled(page > 1);
+        binding.nextButton.setEnabled(page < resIds.length);
     }
 
     public void onBtnPrevious(View view) {
