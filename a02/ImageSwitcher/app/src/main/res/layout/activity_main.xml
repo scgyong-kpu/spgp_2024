@@ -13,7 +13,7 @@
         >
         <ImageButton
             android:id="@+id/prevButton"
-            android:background="@mipmap/prev"
+            android:background="@drawable/btn_prev"
             android:layout_width="@dimen/page_btn_size"
             android:layout_height="@dimen/page_btn_size"
             android:onClick="onBtnPrev"
@@ -29,7 +29,7 @@
             />
         <ImageButton
             android:id="@+id/nextButton"
-            android:background="@mipmap/next"
+            android:background="@drawable/btn_next"
             android:layout_width="@dimen/page_btn_size"
             android:layout_height="@dimen/page_btn_size"
             android:onClick="onBtnNext"
