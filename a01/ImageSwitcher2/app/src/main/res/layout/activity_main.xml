@@ -12,24 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <ImageButton
             android:id="@+id/prevButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/prev"
-            android:background="@null"
+            android:layout_width="@dimen/page_button_size"
+            android:layout_height="@dimen/page_button_size"
+            android:background="@mipmap/prev"
             android:onClick="onBtnPrevious"
             />
+
         <TextView
             android:id="@+id/pageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:text="1 / 6"
+            android:textSize="30sp"
             />
         <ImageButton
             android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/page_button_size"
+            android:layout_height="@dimen/page_button_size"
             android:background="@mipmap/next"
             android:onClick="onBtnNext"
             />
