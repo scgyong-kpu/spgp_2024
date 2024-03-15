@@ -8,6 +8,15 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int page;
+    private int[] resIds = new int[] {
+            R.mipmap.cat_1,
+            R.mipmap.cat_2,
+            R.mipmap.cat_3,
+            R.mipmap.cat_4,
+            R.mipmap.cat_5,
+            R.mipmap.cat_6,
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
