@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private void startGame() {
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
+            iv.setVisibility(View.VISIBLE);
+            iv.setImageResource(R.mipmap.card_blue_back);
             iv.setTag(resIds[i]);
         }
     }
