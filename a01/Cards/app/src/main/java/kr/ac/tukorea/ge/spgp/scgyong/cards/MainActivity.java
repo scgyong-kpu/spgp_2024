@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton previousCardImageView;
 
-    private static int[] RES_IDS = new int[] {
+    private int[] resIds = new int[] {
             R.mipmap.card_2c, R.mipmap.card_3d, R.mipmap.card_4h, R.mipmap.card_5s,
             R.mipmap.card_jc, R.mipmap.card_qh, R.mipmap.card_kd, R.mipmap.card_as,
             R.mipmap.card_2c, R.mipmap.card_3d, R.mipmap.card_4h, R.mipmap.card_5s,
@@ -32,14 +32,7 @@ public class MainActivity extends AppCompatActivity {
         
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
-            // #1
-//            int value = RES_IDS[i];
-//            Integer intObj = new Integer(value);
-            // #2
-//            Integer intObj = RES_IDS[i];
-//            iv.setTag(intObj);
-            // #3
-            iv.setTag(RES_IDS[i]);
+            iv.setTag(resIds[i]);
         }
     }
 
