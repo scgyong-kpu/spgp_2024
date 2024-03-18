@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton previousCardImageView;
+    private ImageButton previousCardImageButton;
 
     private int[] resIds = new int[] {
             R.mipmap.card_2c, R.mipmap.card_3d, R.mipmap.card_4h, R.mipmap.card_5s,
@@ -46,25 +46,25 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Tag", "Card clicked. ID=" + view.getId());
 
         ImageButton imageButton = (ImageButton)view;
-        if (imageButton == previousCardImageView) {
+        if (imageButton == previousCardImageButton) {
             return;
         }
 
         int imgRes = (Integer)imageButton.getTag();
-        if (previousCardImageView != null) {
-            int prevImgRes = (Integer)previousCardImageView.getTag();
+        if (previousCardImageButton != null) {
+            int prevImgRes = (Integer) previousCardImageButton.getTag();
             if (imgRes == prevImgRes) {
                 imageButton.setVisibility(View.INVISIBLE);
-                previousCardImageView.setVisibility(View.INVISIBLE);
-                previousCardImageView = null;
+                previousCardImageButton.setVisibility(View.INVISIBLE);
+                previousCardImageButton = null;
                 return;
             }
-            previousCardImageView.setImageResource(R.mipmap.card_blue_back);
+            previousCardImageButton.setImageResource(R.mipmap.card_blue_back);
         }
 
         imageButton.setImageResource(imgRes);
 
-        previousCardImageView = imageButton;
+        previousCardImageButton = imageButton;
 
     }
 
