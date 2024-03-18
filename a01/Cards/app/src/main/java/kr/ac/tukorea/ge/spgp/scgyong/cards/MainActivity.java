@@ -100,8 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void askRestart() {
-        AlertDialog dlg =
-            new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this)
                 .setTitle("Restart")
                 .setMessage("Do you really want to restart the game?")
                 .setPositiveButton("Restart", new DialogInterface.OnClickListener() {
@@ -111,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .setNegativeButton("Cancel", null)
-                .create();
-        dlg.show();
+                .create()
+                .show();
     }
 }
