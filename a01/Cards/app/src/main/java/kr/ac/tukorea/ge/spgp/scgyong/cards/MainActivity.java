@@ -46,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         int imgRes = (Integer)imageButton.getTag();
         if (previousCardImageView != null) {
+            int prevImgRes = (Integer)previousCardImageView.getTag();
+            if (imgRes == prevImgRes) {
+                imageButton.setVisibility(View.INVISIBLE);
+                previousCardImageView.setVisibility(View.INVISIBLE);
+                previousCardImageView = null;
+                return;
+            }
             previousCardImageView.setImageResource(R.mipmap.card_blue_back);
         }
 
