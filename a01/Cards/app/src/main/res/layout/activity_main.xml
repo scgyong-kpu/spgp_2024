@@ -12,11 +12,16 @@
         android:layout_height="match_parent"
         >
         <ImageButton
-            
+            android:id="@+id/card_00"
             style="@style/cardButtonStyle" />
         <ImageButton
+            android:id="@+id/card_01"
             style="@style/cardButtonStyle" />
         <ImageButton
+            android:id="@+id/card_02"
+            style="@style/cardButtonStyle" />
+        <ImageButton
+            android:id="@+id/card_03"
             style="@style/cardButtonStyle" />
     </LinearLayout>
 
