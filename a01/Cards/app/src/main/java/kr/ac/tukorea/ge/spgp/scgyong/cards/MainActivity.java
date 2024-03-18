@@ -66,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
 
         previousCardImageButton = imageButton;
 
+        addFlip();
+
+    }
+
+    int flips;
+    private void addFlip() {
+        flips += 1;
+//        String text = String.format("Flips: %d", flips);
+//        tv.setText(text);
     }
 
     public void onBtnRestart(View view) {
