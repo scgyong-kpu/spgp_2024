@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 import kr.ac.tukorea.ge.spgp.scgyong.cards.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,13 +40,22 @@ public class MainActivity extends AppCompatActivity {
         startGame();
     }
 
+    Random random = new Random();
     private void startGame() {
+        for (int i = 0; i < VIEW_IDS.length; i++) {
+            int swap = random.nextInt(VIEW_IDS.length);
+            int resId = resIds[i];
+            resIds[i] = resIds[swap];
+            resIds[swap] = resId;
+        }
+        //new Random().s
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
             iv.setVisibility(View.VISIBLE);
             iv.setImageResource(R.mipmap.card_blue_back);
             iv.setTag(resIds[i]);
         }
+        setFlips(0);
     }
 
     public void onBtnCard(View view) {
