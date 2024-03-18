@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import kr.ac.tukorea.ge.spgp.scgyong.cards.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton previousCardImageButton;
@@ -24,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
             R.id.card_20, R.id.card_21, R.id.card_22, R.id.card_23,
             R.id.card_30, R.id.card_31, R.id.card_32, R.id.card_33,
     };
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         startGame();
     }
