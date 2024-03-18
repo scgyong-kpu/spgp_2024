@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/card_2c"
+            android:scaleType="fitCenter"
             android:layout_weight="1"
             />
         <ImageButton
@@ -27,6 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/card_4h"
+            android:layout_weight="1"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/card_5s"
             android:layout_weight="1"
             />
     </LinearLayout>
