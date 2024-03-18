@@ -29,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        startGame();
+    }
+
+    private void startGame() {
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
             iv.setTag(resIds[i]);
@@ -60,5 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
         previousCardImageView = imageButton;
 
+    }
+
+    public void onBtnRestart(View view) {
+        startGame();
     }
 }
