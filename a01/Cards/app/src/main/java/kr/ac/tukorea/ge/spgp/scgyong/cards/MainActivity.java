@@ -71,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
         previousCardImageButton = imageButton;
 
-        addFlip();
+        setFlips(flips + 1);
 
     }
 
     int flips;
-    private void addFlip() {
-        flips += 1;
-//        String text = String.format("Flips: %d", flips);
-//        tv.setText(text);
+    private void setFlips(int flips) {
+        this.flips = flips;
+        String text = String.format("Flips: %d", flips);
+        binding.scoreTextView.setText(text);
     }
 
     public void onBtnRestart(View view) {
