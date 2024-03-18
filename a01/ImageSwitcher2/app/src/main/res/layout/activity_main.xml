@@ -17,7 +17,7 @@
             android:id="@+id/prevButton"
             android:layout_width="@dimen/page_button_size"
             android:layout_height="@dimen/page_button_size"
-            android:background="@mipmap/prev"
+            android:background="@drawable/btn_prev"
             android:onClick="onBtnPrevious"
             />
 
@@ -35,7 +35,7 @@
             android:id="@+id/nextButton"
             android:layout_width="@dimen/page_button_size"
             android:layout_height="@dimen/page_button_size"
-            android:background="@mipmap/next"
+            android:background="@drawable/btn_next"
             android:onClick="onBtnNext"
             />
     </LinearLayout>
