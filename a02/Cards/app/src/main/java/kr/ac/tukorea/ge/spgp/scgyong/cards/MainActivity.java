@@ -51,14 +51,20 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        int resId = (Integer)imageButton.getTag();
+
         if (previousImageButton != null) {
+            int prevResId = (Integer)previousImageButton.getTag();
+            if (resId == prevResId) {
+                // remove 2 cards
+                previousImageButton.setVisibility(View.INVISIBLE);
+                imageButton.setVisibility(View.INVISIBLE);
+                previousImageButton = null;
+                return;
+            }
             previousImageButton.setImageResource(R.mipmap.card_blue_back);
         }
 
-//        Object tagObj = imageButton.getTag();
-//        Integer intObj = (Integer)tagObj;
-//        int resId = intObj.intValue();
-        int resId = (Integer)imageButton.getTag();
         imageButton.setImageResource(resId);
 
         previousImageButton = imageButton;
