@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        startGame();
+    }
+
+    private void startGame() {
 //        for (int i = 0; i < cardResIds.length; i++) {
 //            int ti = random.nextInt(cardResIds.length);
 //            int resId = cardResIds[i];
@@ -81,5 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         previousImageButton = imageButton;
 
+    }
+
+    public void onBtnRestart(View view) {
+        startGame();
     }
 }
