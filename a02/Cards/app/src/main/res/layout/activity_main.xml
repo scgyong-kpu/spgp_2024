@@ -7,11 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+    <LinearLayout style="@style/rowLayout">
         <ImageButton
             android:id="@+id/card_00"
             style="@style/cardImageButton" />
@@ -25,11 +21,7 @@
             android:id="@+id/card_03"
             style="@style/cardImageButton" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+    <LinearLayout style="@style/rowLayout">
         <ImageButton
             android:id="@+id/card_10"
             style="@style/cardImageButton" />
@@ -43,11 +35,7 @@
             android:id="@+id/card_13"
             style="@style/cardImageButton" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+    <LinearLayout style="@style/rowLayout">
         <ImageButton
             android:id="@+id/card_20"
             style="@style/cardImageButton" />
@@ -61,11 +49,7 @@
             android:id="@+id/card_23"
             style="@style/cardImageButton" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+    <LinearLayout style="@style/rowLayout">
         <ImageButton
             android:id="@+id/card_30"
             style="@style/cardImageButton" />
