@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private Random random = new Random();
     private ActivityMainBinding binding;
+    private int flips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         imageButton.setImageResource(resId);
+
+        flips += 1;
+        String text = String.format("Flips: %d", flips);
+        binding.scoreTextView.setText(text);
 
         previousImageButton = imageButton;
 
