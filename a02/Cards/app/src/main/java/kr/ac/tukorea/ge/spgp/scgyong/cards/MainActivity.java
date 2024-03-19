@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 
 import java.util.Random;
 
+import kr.ac.tukorea.ge.spgp.scgyong.cards.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton previousImageButton;
@@ -26,10 +28,14 @@ public class MainActivity extends AppCompatActivity {
             R.mipmap.card_qh,R.mipmap.card_qh,R.mipmap.card_kd,R.mipmap.card_kd,
     };
     private Random random = new Random();
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 //        for (int i = 0; i < cardResIds.length; i++) {
 //            int ti = random.nextInt(cardResIds.length);

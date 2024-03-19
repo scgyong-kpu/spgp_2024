@@ -6,6 +6,9 @@ android {
     namespace = "kr.ac.tukorea.ge.spgp.scgyong.cards"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "kr.ac.tukorea.ge.spgp.scgyong.cards"
         minSdk = 24
