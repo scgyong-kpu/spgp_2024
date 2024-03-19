@@ -51,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < IMAGE_BTN_IDS.length; i++) {
             ImageButton ib = findViewById(IMAGE_BTN_IDS[i]);
+            ib.setVisibility(View.VISIBLE);
+            ib.setImageResource(R.mipmap.card_blue_back);
             ib.setTag(cardResIds[i]);
         }
+
+        previousImageButton = null;
+        setFlips(0);
     }
 
     public void onBtnCard(View view) {
@@ -79,12 +84,16 @@ public class MainActivity extends AppCompatActivity {
 
         imageButton.setImageResource(resId);
 
-        flips += 1;
-        String text = String.format("Flips: %d", flips);
-        binding.scoreTextView.setText(text);
+        setFlips(flips + 1);
 
         previousImageButton = imageButton;
 
+    }
+
+    private void setFlips(int flips) {
+        this.flips = flips;
+        String text = String.format("Flips: %d", flips);
+        binding.scoreTextView.setText(text);
     }
 
     public void onBtnRestart(View view) {
