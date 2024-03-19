@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (int i = 0; i < cardResIds.length; i++) {
-            int ti = random.nextInt(cardResIds.length);
-            int resId = cardResIds[i];
-            cardResIds[i] = cardResIds[ti];
-            cardResIds[ti] = resId;
-        }
+//        for (int i = 0; i < cardResIds.length; i++) {
+//            int ti = random.nextInt(cardResIds.length);
+//            int resId = cardResIds[i];
+//            cardResIds[i] = cardResIds[ti];
+//            cardResIds[ti] = resId;
+//        }
 
         for (int i = 0; i < IMAGE_BTN_IDS.length; i++) {
             ImageButton ib = findViewById(IMAGE_BTN_IDS[i]);
