@@ -5,4 +5,5 @@
     <string name="restart_game_msg">Do you really want to restart?</string>
     <string name="restart_game_btn_restart">Restart</string>
     <string name="alert_btn_no">No</string>
+    <string name="header_btn_restart">Restart</string>
 </resources>
