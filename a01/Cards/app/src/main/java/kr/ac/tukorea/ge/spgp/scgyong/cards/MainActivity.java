@@ -44,13 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     Random random = new Random();
     private void startGame() {
-        for (int i = 0; i < VIEW_IDS.length; i++) {
-            int swap = random.nextInt(VIEW_IDS.length);
-            int resId = resIds[i];
-            resIds[i] = resIds[swap];
-            resIds[swap] = resId;
-        }
-        //new Random().s
+        shuffleCards();
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
             iv.setVisibility(View.VISIBLE);
@@ -59,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         }
         setFlips(0);
         visiblePairCount = VIEW_IDS.length / 2;
+    }
+
+    private void shuffleCards() {
+        for (int i = 0; i < VIEW_IDS.length; i++) {
+            int swap = random.nextInt(VIEW_IDS.length);
+            int resId = resIds[i];
+            resIds[i] = resIds[swap];
+            resIds[swap] = resId;
+        }
     }
 
     public void onBtnCard(View view) {
