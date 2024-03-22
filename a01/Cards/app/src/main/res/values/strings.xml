@@ -5,4 +5,6 @@
     <string name="restart_dialog_msg">Do you really want to restart the game?</string>
     <string name="restart_dialog_btn_restart">Restart</string>
     <string name="alert_btn_cancel">Cancel</string>
+    <string name="header_btn_restart">Restart</string>
+    <string name="toast_same_card">Same Card</string>
 </resources>
