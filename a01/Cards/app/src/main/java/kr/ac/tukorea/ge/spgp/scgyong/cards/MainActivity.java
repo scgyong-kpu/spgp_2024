@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     Random random = new Random();
     private void startGame() {
-        shuffleCards();
+        //shuffleCards();
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
             iv.setVisibility(View.VISIBLE);
