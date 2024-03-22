@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Cards</string>
     <string name="flips_fmt">Flips: %d</string>
+    <string name="restart_dialog_title">Restart</string>
+    <string name="restart_dialog_msg">Do you really want to restart the game?</string>
+    <string name="restart_dialog_btn_restart">Restart</string>
+    <string name="alert_btn_cancel">Cancel</string>
 </resources>

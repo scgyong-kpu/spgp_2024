@@ -102,11 +102,8 @@ public class MainActivity extends AppCompatActivity {
     private int visiblePairCount;
 
     private void setFlips(int flips) {
-        //Context context = this;
-        Resources res = getResources();
-        String fmt = res.getString(R.string.flips_fmt);
         this.flips = flips;
-        String text = String.format(fmt, flips);
+        String text = getString(R.string.flips_fmt, flips);
         binding.scoreTextView.setText(text);
     }
 
@@ -116,15 +113,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void askRestart() {
         new AlertDialog.Builder(this)
-                .setTitle("Restart")
-                .setMessage("Do you really want to restart the game?")
-                .setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+                .setTitle(R.string.restart_dialog_title)
+                .setMessage(R.string.restart_dialog_msg)
+                .setPositiveButton(R.string.restart_dialog_btn_restart, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         startGame();
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton(R.string.alert_btn_cancel, null)
                 .create()
                 .show();
     }
