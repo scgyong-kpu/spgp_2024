@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Cards</string>
     <string name="flips_fmt">Flips: %d</string>
+    <string name="restart_game_title">Restart</string>
+    <string name="restart_game_msg">Do you really want to restart?</string>
+    <string name="restart_game_btn_restart">Restart</string>
+    <string name="alert_btn_no">No</string>
 </resources>
