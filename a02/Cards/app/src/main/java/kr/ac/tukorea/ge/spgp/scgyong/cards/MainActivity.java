@@ -3,7 +3,9 @@ package kr.ac.tukorea.ge.spgp.scgyong.cards;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -100,8 +102,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setFlips(int flips) {
+        Resources res = getResources();
+        String fmt = res.getString(R.string.flips_fmt);
+        // fmt = "Flips: %d"
         this.flips = flips;
-        String text = String.format("Flips: %d", flips);
+        String text = String.format(fmt, flips);
         binding.scoreTextView.setText(text);
     }
 
