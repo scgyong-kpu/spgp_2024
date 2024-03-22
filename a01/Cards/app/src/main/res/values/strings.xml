@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cards</string>
+    <string name="flips_fmt">Flips: %d</string>
 </resources>
