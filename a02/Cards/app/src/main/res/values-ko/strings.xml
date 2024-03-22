@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">카드마추기</string>
+    <string name="flips_fmt">연 카드수: %d</string>
+    <string name="restart_game_title">재시작하기</string>
+    <string name="restart_game_msg">진짜다시시작할겨?</string>
+    <string name="restart_game_btn_restart">재시작</string>
+    <string name="alert_btn_no">아뇨</string>
+</resources>
