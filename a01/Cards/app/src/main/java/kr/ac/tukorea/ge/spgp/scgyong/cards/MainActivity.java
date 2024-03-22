@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             iv.setTag(resIds[i]);
         }
         setFlips(0);
+        visiblePairCount = VIEW_IDS.length / 2;
     }
 
     public void onBtnCard(View view) {
@@ -75,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 imageButton.setVisibility(View.INVISIBLE);
                 previousCardImageButton.setVisibility(View.INVISIBLE);
                 previousCardImageButton = null;
+                visiblePairCount -= 1;
+                if (visiblePairCount == 0) {
+                    askRestart();
+                }
                 return;
             }
             previousCardImageButton.setImageResource(R.mipmap.card_blue_back);
@@ -88,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    int flips;
+    private int flips;
+    private int visiblePairCount;
+
     private void setFlips(int flips) {
         this.flips = flips;
         String text = String.format("Flips: %d", flips);
