@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnRestart(View view) {
-        AlertDialog dlg = new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this)
                 .setTitle("Restart")
                 .setMessage("Do you really want to restart?")
                 .setPositiveButton("Restart", new DialogInterface.OnClickListener() {
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .setNegativeButton("No", null)
-                .create();
-        dlg.show();
+                .create()
+                .show();
     }
 }
