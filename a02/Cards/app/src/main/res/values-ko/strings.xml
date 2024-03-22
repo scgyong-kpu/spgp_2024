@@ -6,4 +6,5 @@
     <string name="restart_game_msg">진짜다시시작할겨?</string>
     <string name="restart_game_btn_restart">재시작</string>
     <string name="alert_btn_no">아뇨</string>
+    <string name="toast_same_card">같은카드다 이자식아</string>
 </resources>

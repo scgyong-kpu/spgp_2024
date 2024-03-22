@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton imageButton = (ImageButton) view;
         if (previousImageButton == imageButton) {
+//            Toast toast = Toast.makeText(this, R.string.toast_same_card, Toast.LENGTH_SHORT);
+//            toast.show();
+            Toast.makeText(this, R.string.toast_same_card, Toast.LENGTH_SHORT).show();
             return;
         }
 
