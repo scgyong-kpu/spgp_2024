@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Random random = new Random();
     private ActivityMainBinding binding;
     private int flips;
+    private int visiblePairCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             ib.setTag(cardResIds[i]);
         }
 
+        visiblePairCount = IMAGE_BTN_IDS.length / 2;
         previousImageButton = null;
         setFlips(0);
     }
@@ -79,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
                 previousImageButton.setVisibility(View.INVISIBLE);
                 imageButton.setVisibility(View.INVISIBLE);
                 previousImageButton = null;
+                visiblePairCount -= 1;
+                if (visiblePairCount == 0) {
+                    //no new AlertDialog.Builder(......
+                    askRestart();
+                }
                 return;
             }
             previousImageButton.setImageResource(R.mipmap.card_blue_back);
@@ -99,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnRestart(View view) {
+        askRestart();
+    }
+
+    private void askRestart() {
         new AlertDialog.Builder(this)
                 .setTitle("Restart")
                 .setMessage("Do you really want to restart?")
