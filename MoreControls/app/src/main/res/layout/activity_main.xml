@@ -45,6 +45,48 @@
         android:layout_below="@id/goodProgrammerCheckbox"
         android:onClick="onBtnDoIt"
         />
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/immediateSwitch"
+        android:text="@string/apply_immediately"
+        android:layout_below="@id/doItButton"
+        android:padding="8dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/immediateSwitch"
+        android:id="@+id/seekbarGroup"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Money"
+            />
+        <SeekBar
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/moneySeekBar"
+            android:min="10"
+            android:max="10000"
+            android:progress="1000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/moneyValueTextView"
+            android:text="$100"
+            />
+    </LinearLayout>
 
+    <kr.ac.tukorea.ge.spgp2024.myapplication.GameView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/seekbarGroup"
+        android:id="@+id/gameView"
+        />
 
 </RelativeLayout>
