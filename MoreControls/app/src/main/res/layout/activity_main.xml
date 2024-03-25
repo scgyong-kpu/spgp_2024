@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/yourNameTextView"
         android:layout_alignBaseline="@id/yourNameTextView"
+        android:hint="@string/noname"
         />
     <CheckBox
         android:id="@+id/goodProgrammerCheckbox"
