@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBtnDoIt(View view) {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
-        int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing; // Alt+Enter here
+        int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
+        binding.pageTitleTextView.setText(strId);
+    }
+
+    public void onCheckGoodProgrammer(View view) {
+        boolean isGood = binding.goodProgrammerCheckbox.isChecked();
+        int strId = isGood ? R.string.good_news : R.string.bad_news;
         binding.pageTitleTextView.setText(strId);
     }
 }

@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pageTitleTextView"
         android:text="@string/good_programmer_checkbox_text"
+        android:onClick="onCheckGoodProgrammer"
         />
     <Button
         android:id="@+id/doItButton"
