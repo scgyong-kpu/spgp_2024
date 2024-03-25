@@ -57,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/immediateSwitch"
+        android:id="@+id/seekbarGroup"
         android:padding="10dp"
         >
         <TextView
@@ -80,5 +81,12 @@
             android:text="$100"
             />
     </LinearLayout>
+
+    <kr.ac.tukorea.ge.spgp2024.myapplication.GameView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/seekbarGroup"
+        android:id="@+id/gameView"
+        />
 
 </RelativeLayout>
