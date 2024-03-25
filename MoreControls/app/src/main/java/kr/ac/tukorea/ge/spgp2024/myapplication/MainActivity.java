@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            String name = binding.nameEditText.getText().toString().trim();
+            String text = getString(R.string.name_length_msg, name.length());
+            binding.pageTitleTextView.setText(text);
         }
 
         @Override
