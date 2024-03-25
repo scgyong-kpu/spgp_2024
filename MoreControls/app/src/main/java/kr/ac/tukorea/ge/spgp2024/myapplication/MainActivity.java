@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnDoIt(View view) {
-        binding.pageTitleTextView.setText("Something");
+        binding.pageTitleTextView.setText(R.string.you_get_one_grand);
     }
 }
