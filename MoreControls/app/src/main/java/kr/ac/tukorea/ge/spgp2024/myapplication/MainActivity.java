@@ -22,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
         int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
         String msg = getString(strId);
-        String name = binding.nameEditText.getText().toString();
+        String name = binding.nameEditText.getText().toString().trim();
+        if (name.isEmpty()) {
+            name = getString(R.string.noname);
+        }
         String text = getString(R.string.main_msg_fmt, name, msg);
         binding.pageTitleTextView.setText(text);
     }
