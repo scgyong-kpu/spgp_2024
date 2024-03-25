@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.SeekBar;
 
 import kr.ac.tukorea.ge.spgp2024.myapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private int money;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.nameEditText.addTextChangedListener(nameEditTextWatcher);
+        binding.moneySeekBar.setOnSeekBarChangeListener(moneySeekbarChangeListener);
+        setMoney(1000);
     }
 
     private final TextWatcher nameEditTextWatcher = new TextWatcher() {
@@ -44,14 +48,39 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private SeekBar.OnSeekBarChangeListener moneySeekbarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            setMoney(seekBar.getProgress());
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+    };
+
     public void onBtnDoIt(View view) {
         doIt();
     }
 
+    private void setMoney(int money) {
+        this.money = money;
+        binding.moneyValueTextView.setText(String.valueOf(money));
+    }
     private void doIt() {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
-        int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
-        String msg = getString(strId);
+        String msg;
+        if (isGood) {
+            msg = getString(R.string.you_get_money, money);
+        } else {
+            msg = getString(R.string.you_have_nothing);
+        }
         String name = binding.nameEditText.getText().toString().trim();
         if (name.isEmpty()) {
             name = getString(R.string.noname);
