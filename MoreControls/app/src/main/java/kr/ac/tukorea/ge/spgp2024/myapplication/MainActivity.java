@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBtnDoIt(View view) {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
         int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
-        binding.pageTitleTextView.setText(strId);
+        String msg = getString(strId);
+        String name = binding.nameEditText.getText().toString();
+        String text = getString(R.string.main_msg_fmt, name, msg);
+        binding.pageTitleTextView.setText(text);
     }
 
     public void onCheckGoodProgrammer(View view) {
