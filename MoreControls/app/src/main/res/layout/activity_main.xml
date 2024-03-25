@@ -45,6 +45,14 @@
         android:layout_below="@id/goodProgrammerCheckbox"
         android:onClick="onBtnDoIt"
         />
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/immediateSwitch"
+        android:text="@string/apply_immediately"
+        android:layout_below="@id/doItButton"
+        android:padding="8dp"
+        />
 
 
 </RelativeLayout>
