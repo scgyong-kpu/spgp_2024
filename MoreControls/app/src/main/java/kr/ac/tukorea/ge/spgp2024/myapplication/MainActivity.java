@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            if (binding.immediateSwitch.isChecked()) {
+                doIt();
+                return;
+            }
             String name = binding.nameEditText.getText().toString().trim();
             String text = getString(R.string.name_length_msg, name.length());
             binding.pageTitleTextView.setText(text);
@@ -41,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void onBtnDoIt(View view) {
+        doIt();
+    }
+
+    private void doIt() {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
         int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
         String msg = getString(strId);
