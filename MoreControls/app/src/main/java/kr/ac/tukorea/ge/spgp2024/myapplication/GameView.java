@@ -38,6 +38,9 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        int w = getWidth(), h = getHeight();
+        Paint paint = new Paint();
+        paint.setColor(Color.BLUE);
+        canvas.drawCircle(w/2, h/2, Math.min(w,h)/2, paint);
     }
 }
