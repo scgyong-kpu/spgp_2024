@@ -15,7 +15,15 @@ import android.view.View;
  */
 public class GameView extends View {
     private TextPaint mTextPaint;
-    private Paint paint = new Paint();
+
+    // Lazy Initialization
+    private Paint paint;
+    private Paint getPaint() {
+        if (paint == null) {
+            paint = new Paint();
+        }
+        return paint;
+    }
 
     public GameView(Context context) {
         super(context);
@@ -47,6 +55,6 @@ public class GameView extends View {
         int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
         int radius = Math.min(contentWidth, contentHeight) / 2;
         paint.setColor(Color.BLUE);
-        canvas.drawCircle(cx, cy, radius, paint);
+        canvas.drawCircle(cx, cy, radius, getPaint());
     }
 }
