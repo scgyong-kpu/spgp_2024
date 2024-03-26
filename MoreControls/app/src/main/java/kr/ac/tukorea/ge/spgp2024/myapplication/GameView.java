@@ -15,7 +15,7 @@ import android.view.View;
  */
 public class GameView extends View {
     private TextPaint mTextPaint;
-    private Paint paint;
+    private Paint paint = new Paint();
 
     public GameView(Context context) {
         super(context);
@@ -34,7 +34,6 @@ public class GameView extends View {
 
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
-        paint = new Paint();
     }
 
     @Override
