@@ -15,6 +15,7 @@ import android.view.View;
  */
 public class GameView extends View {
     private TextPaint mTextPaint;
+    private Paint paint;
 
     public GameView(Context context) {
         super(context);
@@ -33,6 +34,7 @@ public class GameView extends View {
 
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
+        paint = new Paint();
     }
 
     @Override
@@ -45,7 +47,6 @@ public class GameView extends View {
         int contentHeight = (h - t - b);
         int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
         int radius = Math.min(contentWidth, contentHeight) / 2;
-        Paint paint = new Paint();
         paint.setColor(Color.BLUE);
         canvas.drawCircle(cx, cy, radius, paint);
     }
