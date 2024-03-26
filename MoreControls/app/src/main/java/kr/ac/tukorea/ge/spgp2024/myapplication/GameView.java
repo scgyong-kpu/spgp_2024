@@ -38,9 +38,15 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        int l = getPaddingLeft(), r = getPaddingRight();
+        int t = getPaddingTop(), b = getPaddingBottom();
         int w = getWidth(), h = getHeight();
+        int contentWidth = (w - l - r);
+        int contentHeight = (h - t - b);
+        int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
+        int radius = Math.min(contentWidth, contentHeight) / 2;
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
-        canvas.drawCircle(w/2, h/2, Math.min(w,h)/2, paint);
+        canvas.drawCircle(cx, cy, radius, paint);
     }
 }

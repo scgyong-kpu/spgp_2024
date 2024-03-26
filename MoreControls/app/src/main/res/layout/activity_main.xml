@@ -87,8 +87,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/seekbarGroup"
         android:id="@+id/gameView"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="150dp"
+        android:paddingLeft="100dp"
+        android:paddingTop="150dp"
         android:background="#ffd"
         />
 
