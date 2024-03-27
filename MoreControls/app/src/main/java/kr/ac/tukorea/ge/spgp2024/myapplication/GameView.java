@@ -69,10 +69,10 @@ public class GameView extends View {
         }
         Log.d(TAG, "l="+l+" t="+t+" cw=" + contentWidth + " ch=" + contentHeight);
         Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
-        drawSmiley(canvas, l + offsetX, t + offsetY, size);
+        drawSmiley(canvas, l + offsetX, t + offsetY, size, 3);
     }
 
-    private void drawSmiley(Canvas canvas, float tx, float ty, float scale) {
+    private void drawSmiley(Canvas canvas, float tx, float ty, float scale, int depth) {
         canvas.save();
         canvas.translate(tx, ty);
         canvas.scale(scale, scale);
@@ -83,14 +83,14 @@ public class GameView extends View {
         float eyeY = 3.0f / 8.0f;
         float eyeRadius = 1.0f / 8.0f;
 
-        Log.d(TAG, "canvas Width = " + canvas.getWidth());
-//        if (radius > 100) {
-//            drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
-//            drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
-//        } else {
+        Log.d(TAG, "Depth = " + depth);
+        if (depth > 0) {
+            drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, depth - 1);
+            drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, depth - 1);
+        } else {
             canvas.drawCircle(leftEyeX, eyeY, eyeRadius, paint);
             canvas.drawCircle(rightEyeX, eyeY, eyeRadius, paint);
-//        }
+        }
 
         float mouthX1 = 0.25f, mouthX2 = 0.75f;
         float mouthY = 0.75f;
