@@ -69,12 +69,8 @@ public class GameView extends View {
         }
         Log.d(TAG, "l="+l+" t="+t+" cw=" + contentWidth + " ch=" + contentHeight);
         Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
-        int depth = 1, scale = size;
-        while (scale > 100) {
-            depth++;
-            Log.d(TAG, "scale=" + scale + " depth=" + depth);
-            scale /= 4;
-        }
+        int depth = (int) Math.ceil(Math.log(size / 100.0) / Math.log(4)) + 1;
+        Log.d(TAG, " depth=" + depth);
         drawSmiley(canvas, l + offsetX, t + offsetY, size, depth);
     }
 
