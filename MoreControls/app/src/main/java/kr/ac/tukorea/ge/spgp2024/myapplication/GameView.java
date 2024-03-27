@@ -21,6 +21,7 @@ public class GameView extends View {
     private Paint getPaint() {
         if (paint == null) {
             paint = new Paint();
+            paint.setColor(Color.BLUE);
         }
         return paint;
     }
@@ -54,7 +55,6 @@ public class GameView extends View {
         int contentHeight = (h - t - b);
         int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
         int radius = Math.min(contentWidth, contentHeight) / 2;
-        paint.setColor(Color.BLUE);
         canvas.drawCircle(cx, cy, radius, getPaint());
     }
 }
