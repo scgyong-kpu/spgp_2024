@@ -22,6 +22,7 @@ public class GameView extends View {
         if (paint == null) {
             paint = new Paint();
             paint.setColor(Color.BLUE);
+            paint.setStyle(Paint.Style.STROKE);
         }
         return paint;
     }
