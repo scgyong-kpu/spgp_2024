@@ -69,7 +69,13 @@ public class GameView extends View {
         }
         Log.d(TAG, "l="+l+" t="+t+" cw=" + contentWidth + " ch=" + contentHeight);
         Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
-        drawSmiley(canvas, l + offsetX, t + offsetY, size, 3);
+        int depth = 1, scale = size;
+        while (scale > 100) {
+            depth++;
+            Log.d(TAG, "scale=" + scale + " depth=" + depth);
+            scale /= 4;
+        }
+        drawSmiley(canvas, l + offsetX, t + offsetY, size, depth);
     }
 
     private void drawSmiley(Canvas canvas, float tx, float ty, float scale, int depth) {
@@ -83,7 +89,7 @@ public class GameView extends View {
         float eyeY = 3.0f / 8.0f;
         float eyeRadius = 1.0f / 8.0f;
 
-        Log.d(TAG, "Depth = " + depth);
+        //Log.d(TAG, "Depth = " + depth);
         if (depth > 0) {
             drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, depth - 1);
             drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, depth - 1);
