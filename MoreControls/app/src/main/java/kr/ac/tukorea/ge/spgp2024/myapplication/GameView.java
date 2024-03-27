@@ -27,7 +27,7 @@ public class GameView extends View {
             paint = new Paint();
             paint.setColor(Color.BLUE);
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(10);
+            paint.setStrokeWidth(0.01f);
         }
         return paint;
     }
@@ -59,29 +59,39 @@ public class GameView extends View {
         int w = getWidth(), h = getHeight();
         int contentWidth = (w - l - r);
         int contentHeight = (h - t - b);
-        drawSmiley(canvas, l, t, contentWidth,contentHeight);
+        int offsetX = 0, offsetY = 0, size;
+        if (contentWidth > contentHeight) {
+            offsetX = (contentWidth - contentHeight) / 2;
+            size = contentHeight;
+        } else {
+            offsetY = (contentHeight - contentWidth) / 2;
+            size = contentWidth;
+        }
+        canvas.translate(offsetX, offsetY);
+        canvas.scale(size, size);
+        Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
+        drawSmiley(canvas);
     }
 
-    private void drawSmiley(Canvas canvas, int left, int top, int width, int height) {
-        int cx = left + width / 2, cy = top + height / 2;
-        int radius = Math.min(width, height) / 2;
-        canvas.drawCircle(cx, cy, radius, getPaint());
+    private void drawSmiley(Canvas canvas) {
+        float radius = 0.5f;
+        canvas.drawCircle(0.5f, 0.5f, radius, getPaint());
 
-        int leftEyeX = cx - radius / 3, rightEyeX = cx + radius / 3;
-        int eyeY = cy - radius / 4;
-        int eyeRadius = radius / 4;
+        float leftEyeX = 1.0f/3.0f, rightEyeX = 2.0f/3.0f;
+        float eyeY = 3.0f / 8.0f;
+        float eyeRadius = 1.0f / 8.0f;
 
         Log.d(TAG, "Radius=" + radius);
-        if (radius > 100) {
-            drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
-            drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
-        } else {
+//        if (radius > 100) {
+//            drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
+//            drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
+//        } else {
             canvas.drawCircle(leftEyeX, eyeY, eyeRadius, paint);
             canvas.drawCircle(rightEyeX, eyeY, eyeRadius, paint);
-        }
+//        }
 
-        int mouthX1 = cx - radius / 2, mouthX2 = cx + radius / 2;
-        int mouthY = cy + radius / 2;
+        float mouthX1 = 0.25f, mouthX2 = 0.75f;
+        float mouthY = 0.75f;
         canvas.drawArc(mouthX1, eyeY, mouthX2, mouthY, 15, 150, false, paint);
     }
 }
