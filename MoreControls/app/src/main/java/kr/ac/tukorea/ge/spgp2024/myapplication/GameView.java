@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -19,6 +20,7 @@ public class GameView extends View {
 
     // Lazy Initialization
     private Paint paint;
+    private Rect rect;
     private Paint getPaint() {
         if (paint == null) {
             paint = new Paint();
@@ -46,21 +48,18 @@ public class GameView extends View {
 
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
         int l = getPaddingLeft(), r = getPaddingRight();
         int t = getPaddingTop(), b = getPaddingBottom();
         int w = getWidth(), h = getHeight();
         int contentWidth = (w - l - r);
         int contentHeight = (h - t - b);
-        Rect rect = new Rect(l, t, l + contentWidth, r + contentHeight);
-        // Avoid object allocations during draw/layout operations (preallocate and reuse instead)
-        // Inspection info:You should avoid allocating objects during a drawing or layout operation.
-        // These are called frequently, so a smooth UI can be interrupted by garbage collection pauses
-        // caused by the object allocations.
+        rect = new Rect(l, t, l + contentWidth, r + contentHeight);
+        Log.d("CanvasTest", "l=" + l + " t=" + t + " w=" + w + " h=" + h + " cw=" + contentWidth + " ch=" + contentHeight);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         canvas.drawRect(rect, getPaint());
     }
 }
