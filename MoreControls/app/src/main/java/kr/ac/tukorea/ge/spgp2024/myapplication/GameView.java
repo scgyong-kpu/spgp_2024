@@ -63,5 +63,11 @@ public class GameView extends View {
         int radius = Math.min(contentWidth, contentHeight) / 2;
         canvas.drawCircle(cx, cy, radius, getPaint());
 
+        int leftEyeX = cx - radius / 3, rightEyeX = cx + radius / 3;
+        int eyeY = cy - radius / 4;
+        int eyeRadius = radius / 4;
+
+        canvas.drawCircle(leftEyeX, eyeY, eyeRadius, paint);
+        canvas.drawCircle(rightEyeX, eyeY, eyeRadius, paint);
     }
 }
