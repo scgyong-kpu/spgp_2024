@@ -16,6 +16,7 @@ import android.view.View;
  * TODO: document your custom view class.
  */
 public class GameView extends View {
+    private static final String TAG = GameView.class.getSimpleName();
     private TextPaint mTextPaint;
 
     // Lazy Initialization
@@ -54,7 +55,7 @@ public class GameView extends View {
         int contentWidth = (w - l - r);
         int contentHeight = (h - t - b);
         rect = new Rect(l, t, l + contentWidth, r + contentHeight);
-        Log.d("CanvasTest", "l=" + l + " t=" + t + " w=" + w + " h=" + h + " cw=" + contentWidth + " ch=" + contentHeight);
+        Log.d(TAG, "l=" + l + " t=" + t + " w=" + w + " h=" + h + " cw=" + contentWidth + " ch=" + contentHeight);
     }
 
     @Override
