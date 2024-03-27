@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -55,8 +56,11 @@ public class GameView extends View {
         int w = getWidth(), h = getHeight();
         int contentWidth = (w - l - r);
         int contentHeight = (h - t - b);
-        int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
-        int radius = Math.min(contentWidth, contentHeight) / 2;
-        canvas.drawCircle(cx, cy, radius, getPaint());
+        Rect rect = new Rect(l, t, l + contentWidth, r + contentHeight);
+        // Avoid object allocations during draw/layout operations (preallocate and reuse instead)
+        // Inspection info:You should avoid allocating objects during a drawing or layout operation.
+        // These are called frequently, so a smooth UI can be interrupted by garbage collection pauses
+        // caused by the object allocations.
+        canvas.drawRect(rect, getPaint());
     }
 }
