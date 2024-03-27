@@ -67,21 +67,20 @@ public class GameView extends View {
             offsetY = (contentHeight - contentWidth) / 2;
             size = contentWidth;
         }
-        canvas.translate(offsetX, offsetY);
+        canvas.translate(l + offsetX, t + offsetY);
         canvas.scale(size, size);
+        Log.d(TAG, "l="+l+" t="+t+" cw=" + contentWidth + " ch=" + contentHeight);
         Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
         drawSmiley(canvas);
     }
 
     private void drawSmiley(Canvas canvas) {
-        float radius = 0.5f;
-        canvas.drawCircle(0.5f, 0.5f, radius, getPaint());
+        canvas.drawCircle(0.5f, 0.5f, 0.5f, getPaint());
 
         float leftEyeX = 1.0f/3.0f, rightEyeX = 2.0f/3.0f;
         float eyeY = 3.0f / 8.0f;
         float eyeRadius = 1.0f / 8.0f;
 
-        Log.d(TAG, "Radius=" + radius);
 //        if (radius > 100) {
 //            drawSmiley(canvas, leftEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
 //            drawSmiley(canvas, rightEyeX - eyeRadius, eyeY - eyeRadius, 2 * eyeRadius, 2 * eyeRadius);
