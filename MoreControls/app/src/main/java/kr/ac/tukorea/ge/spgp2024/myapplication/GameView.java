@@ -49,24 +49,19 @@ public class GameView extends View {
 
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
-        int l = getPaddingLeft(), r = getPaddingRight();
-        int t = getPaddingTop(), b = getPaddingBottom();
-        int w = getWidth(), h = getHeight();
-        int contentWidth = (w - l - r);
-        int contentHeight = (h - t - b);
-        rect = new Rect(l, t, l + contentWidth, r + contentHeight);
-        Log.d(TAG, "l=" + l + " t=" + t + " w=" + w + " h=" + h + " cw=" + contentWidth + " ch=" + contentHeight);
-    }
-
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        Log.d(TAG, "(" + w + "," + h + ") <= (" + oldw + "," + oldh + ")");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(rect, getPaint());
+        int l = getPaddingLeft(), r = getPaddingRight();
+        int t = getPaddingTop(), b = getPaddingBottom();
+        int w = getWidth(), h = getHeight();
+        int contentWidth = (w - l - r);
+        int contentHeight = (h - t - b);
+        int cx = l + contentWidth / 2, cy = t + contentHeight / 2;
+        int radius = Math.min(contentWidth, contentHeight) / 2;
+        canvas.drawCircle(cx, cy, radius, getPaint());
+
     }
 }
