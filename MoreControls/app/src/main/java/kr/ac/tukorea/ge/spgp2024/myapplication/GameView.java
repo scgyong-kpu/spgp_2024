@@ -67,11 +67,13 @@ public class GameView extends View {
             offsetY = (contentHeight - contentWidth) / 2;
             size = contentWidth;
         }
+        canvas.save();
         canvas.translate(l + offsetX, t + offsetY);
         canvas.scale(size, size);
         Log.d(TAG, "l="+l+" t="+t+" cw=" + contentWidth + " ch=" + contentHeight);
         Log.d(TAG, "offsetX="+offsetX+" offsetY="+offsetY+" size="+size);
         drawSmiley(canvas);
+        canvas.restore();
     }
 
     private void drawSmiley(Canvas canvas) {
